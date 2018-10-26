@@ -17,7 +17,11 @@ class LoginActivity : AppCompatActivity() {
             startActivity(toRegister)
         }
         LoginButton.setOnClickListener {
-            Toast.makeText(this, "Hello " + usernameEditText.text, Toast.LENGTH_LONG).show()
+//            if (usernameEditText.text.equals("Admin") && passwordEditText.text.equals("Admin")) {
+                val toHome = Intent(this, HomeActivity::class.java)
+                startActivity(toHome)
+//            }
+
         }
 
     }
