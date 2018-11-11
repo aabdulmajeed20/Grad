@@ -16,12 +16,12 @@ class LoginActivity : AppCompatActivity() {
             val toRegister = Intent(this, RegisterActivity::class.java)
             startActivity(toRegister)
         }
-        LoginButton.setOnClickListener {
-//            if (usernameEditText.text.equals("Admin") && passwordEditText.text.equals("Admin")) {
-                val toHome = Intent(this, HomeActivity::class.java)
-                startActivity(toHome)
-//            }
 
+        LoginButton.setOnClickListener {
+            if(usernameEditText.text.toString() == "Admin" && passwordEditText.text.toString() == "Admin") {
+                val toProfile = Intent(this, ProfileActivity::class.java)
+                startActivity(toProfile)
+            }
         }
 
     }
