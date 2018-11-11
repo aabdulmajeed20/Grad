@@ -8,7 +8,7 @@ import android.view.ViewGroup
 
 
 
-class UsersRecyclerAdapter(private val listFile: List<File>) : RecyclerView.Adapter<UsersRecyclerAdapter.FileViewHolder>() {
+class FilesRecyclerAdapter(private val listFile: List<File>) : RecyclerView.Adapter<FilesRecyclerAdapter.FileViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FileViewHolder {
         // inflating recycler item view
