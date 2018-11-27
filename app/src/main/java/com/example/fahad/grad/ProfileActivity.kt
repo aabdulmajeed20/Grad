@@ -35,10 +35,10 @@ class ProfileActivity : AppCompatActivity() {
         recyclerViewFiles.itemAnimator = DefaultItemAnimator()
         recyclerViewFiles.setHasFixedSize(true)
         recyclerViewFiles.adapter = filesRecyclerAdapter
-        val f1 = File(0, "File 1", "Here is the file 1", "Some Scripts", 0)
-        val f2 = File(1, "File 2", "Here is the file 2", "Some Scripts", 0)
-        listFiles.add(f1)
-        listFiles.add(f2)
+//        val f1 = File(0, "File 1", "Here is the file 1", "Some Scripts", 0)
+//        val f2 = File(1, "File 2", "Here is the file 2", "Some Scripts", 0)
+//        listFiles.add(f1)
+//        listFiles.add(f2)
 
 
     }

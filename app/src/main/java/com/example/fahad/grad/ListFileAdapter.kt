@@ -21,6 +21,7 @@ class FilesRecyclerAdapter(private val listFile: List<File>) : RecyclerView.Adap
     override fun onBindViewHolder(holder: FileViewHolder, position: Int) {
         holder.fileName.text = listFile[position].Name
         holder.fileDescription.text = listFile[position].Description
+        holder.devices.text = listFile[position].getDevices()
     }
 
     override fun getItemCount(): Int {
@@ -35,10 +36,12 @@ class FilesRecyclerAdapter(private val listFile: List<File>) : RecyclerView.Adap
 
         var fileName: AppCompatTextView
         var fileDescription: AppCompatTextView
+        var devices: AppCompatTextView
 
         init {
             fileName = view.findViewById<View>(R.id.fileName) as AppCompatTextView
             fileDescription = view.findViewById<View>(R.id.fileDescription) as AppCompatTextView
+            devices = view.findViewById<View>(R.id.devices) as AppCompatTextView
         }
     }
 

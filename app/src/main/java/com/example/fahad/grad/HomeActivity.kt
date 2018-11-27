@@ -41,7 +41,7 @@ class HomeActivity : AppCompatActivity() {
         initObjects()
 
         specialistButton.setOnClickListener {
-            val toLogin = Intent(this, LoginActivity::class.java)
+            val toLogin = Intent(this, CreateScriptActivity::class.java)
             startActivity(toLogin)
         }
 
@@ -62,12 +62,14 @@ class HomeActivity : AppCompatActivity() {
         recyclerViewFiles.itemAnimator = DefaultItemAnimator()
         recyclerViewFiles.setHasFixedSize(true)
         recyclerViewFiles.adapter = filesRecyclerAdapter
-        val f1 = File(0, "File 1", "Here is the file 1", "Some Scripts", 0)
-        val f2 = File(1, "File 2", "Here is the file 2", "Some Scripts", 0)
-        val f3 = File(2, "File 3", "Here is the file 3", "Some Scripts", 1)
+        val f1 = File(0, "File 1", "Here is the file 1", "Some Scripts", 0, mutableListOf("Camera"), Date(), 2, 4.3)
+        val f2 = File(1, "File 2", "Here is the file 2", "Some Scripts", 0, mutableListOf("Router"), Date(), 2, 4.3)
+        val f3 = File(2, "File 3", "Here is the file 3", "Some Scripts", 1, mutableListOf("Air Conditioner"), Date(), 2, 4.3)
         listFiles.add(f1)
         listFiles.add(f2)
         listFiles.add(f3)
+        f1.DeviceType.add("Other Device")
+        f2.DeviceType.add("in f2 another device")
         listFiles.add(f1)
         listFiles.add(f2)
         listFiles.add(f3)

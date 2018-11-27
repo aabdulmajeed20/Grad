@@ -23,4 +23,5 @@
     <string name="file_description">Description</string>
     <string name="is_specialist">Specialist?    press here!</string>
     <string name="create_script">Create a Script</string>
+    <string name="devices">Devices</string>
 </resources>
