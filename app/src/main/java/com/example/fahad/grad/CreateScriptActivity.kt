@@ -40,7 +40,7 @@ class CreateScriptActivity : AppCompatActivity() {
                                 click(s.substring(7, s.length - 2))
                                 Toast.makeText(context, "In CLICK, the url: ${web_view.url}", Toast.LENGTH_LONG).show()
                             }
-                            else -> print("HEllo")
+                            else -> print("Hello")
                         }
                     }
                 }
