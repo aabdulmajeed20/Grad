@@ -20,4 +20,12 @@ data class File(
         }
         return result
     }
+
+    fun getScript( s:String): List<String> {
+        val result = s.split("\n")
+
+
+
+        return result
+    }
 }

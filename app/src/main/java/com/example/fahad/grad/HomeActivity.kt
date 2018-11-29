@@ -15,6 +15,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_home.*
 import java.util.*
 
@@ -62,7 +63,7 @@ class HomeActivity : AppCompatActivity() {
         recyclerViewFiles.itemAnimator = DefaultItemAnimator()
         recyclerViewFiles.setHasFixedSize(true)
         recyclerViewFiles.adapter = filesRecyclerAdapter
-        val f1 = File(0, "File 1", "Here is the file 1", "Some Scripts", 0, mutableListOf("Camera"), Date(), 2, 4.3)
+        val f1 = File(0, "File 1", "Here is the file 1", "openUrl()\nfillField()\nClick()", 0, mutableListOf("Camera"), Date(), 2, 4.3)
         val f2 = File(1, "File 2", "Here is the file 2", "Some Scripts", 0, mutableListOf("Router"), Date(), 2, 4.3)
         val f3 = File(2, "File 3", "Here is the file 3", "Some Scripts", 1, mutableListOf("Air Conditioner"), Date(), 2, 4.3)
         listFiles.add(f1)
