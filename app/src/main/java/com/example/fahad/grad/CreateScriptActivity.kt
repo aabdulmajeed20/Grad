@@ -4,6 +4,7 @@ import android.graphics.Bitmap
 import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.webkit.WebChromeClient
 import android.webkit.WebSettings
@@ -23,7 +24,7 @@ class CreateScriptActivity : AppCompatActivity() {
         setContentView(R.layout.activity_create_script)
 
         web_view.settings.javaScriptEnabled = true
-        val f1 = File(0, "File 1", "Here is the file 1", "openUrl(\"https://www.google.com/\")\nfillField(\"q\",\"facebook\")\nclick(\"Tg7LZd\")\nclick(\"C8nzq BmP5tf\")", 0, mutableListOf("Camera"), Date(), 2, 4.3)
+        val f1 = File(0, "File 1", "Here is the file 1", "openUrl(\"https://www.google.com/\")\nfillField(\"q\",\"facebook\")\nclick(\"Tg7LZd\")\nclick(\"C8nzq BmP5tf\")\nfillField(\"email\",\"Abdullah\")\nfillField(\"pass\",\"12345\")", 0, mutableListOf("Camera"), Date(), 2, 4.3)
         val script = f1.getScript(f1.Script) //[openUrl("google.com"), fillField("dsaf",""), click("ghj")]
         var x = 0
         val context = this
@@ -34,26 +35,21 @@ class CreateScriptActivity : AppCompatActivity() {
                     var clicked = false
                     var uurl: String? = ""
                     for (s in script) {
-//                        if(clicked) {
-//                            TimeUnit.SECONDS.sleep(1L)
-//                            Toast.makeText(context,""+clicked, Toast.LENGTH_LONG).show()
-//                            clicked = false
-//
-//                        }
                         when (s.substring(0, 4)) {
                             "fill" -> {
-                                fillField(s.substring(11, s.indexOf(',') - 1), s.substring(s.indexOf(',') + 2, s.length - 2))
+                                if(clicked){
+                                    Handler().postDelayed({                                fillField(s.substring(11, s.indexOf(',') - 1), s.substring(s.indexOf(',') + 2, s.length - 2))
+                                    },8000)
+                                } else
+                                    fillField(s.substring(11, s.indexOf(',') - 1), s.substring(s.indexOf(',') + 2, s.length - 2))
                                 Toast.makeText(context, "In FILL, the url: ${web_view.url}", Toast.LENGTH_LONG).show()
                             }
                             "clic" -> {
-                                click(s.substring(7, s.length - 2))
+                                if(clicked) {
+                                    Handler().postDelayed({click(s.substring(7, s.length - 2))}, 4000)
+                                }else
+                                    click(s.substring(7, s.length - 2))
                                 clicked = true
-                                uurl = url
-                                while (uurl == url && clicked) {
-                                    if (clicked) {
-                                        Toast.makeText(context, "In CLICK, the url: ${web_view.url}", Toast.LENGTH_LONG).show()
-                                    } else break
-                                }
                             }
                             else -> Toast.makeText(context, "Hello Abdullah", Toast.LENGTH_LONG).show()
                         }
