@@ -13,6 +13,7 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_create_script.*
 import java.io.BufferedReader
 import java.util.*
+import java.util.concurrent.TimeUnit
 
 class CreateScriptActivity : AppCompatActivity() {
 
@@ -30,7 +31,15 @@ class CreateScriptActivity : AppCompatActivity() {
         web_view.webViewClient = object : WebViewClient() {
             override fun onPageFinished(view: WebView?, url: String?) {
                 if (x == 0) {
+                    var clicked = false
+                    var uurl: String? = ""
                     for (s in script) {
+//                        if(clicked) {
+//                            TimeUnit.SECONDS.sleep(1L)
+//                            Toast.makeText(context,""+clicked, Toast.LENGTH_LONG).show()
+//                            clicked = false
+//
+//                        }
                         when (s.substring(0, 4)) {
                             "fill" -> {
                                 fillField(s.substring(11, s.indexOf(',') - 1), s.substring(s.indexOf(',') + 2, s.length - 2))
@@ -38,32 +47,22 @@ class CreateScriptActivity : AppCompatActivity() {
                             }
                             "clic" -> {
                                 click(s.substring(7, s.length - 2))
-                                Toast.makeText(context, "In CLICK, the url: ${web_view.url}", Toast.LENGTH_LONG).show()
+                                clicked = true
+                                uurl = url
+                                while (uurl == url && clicked) {
+                                    if (clicked) {
+                                        Toast.makeText(context, "In CLICK, the url: ${web_view.url}", Toast.LENGTH_LONG).show()
+                                    } else break
+                                }
                             }
-                            else -> print("Hello")
+                            else -> Toast.makeText(context, "Hello Abdullah", Toast.LENGTH_LONG).show()
                         }
                     }
                 }
-                x=1
+                x = 1
             }
+
         }
-        Toast.makeText(context, "In outside, the url: ${web_view.url}", Toast.LENGTH_LONG).show()
-
-//        web_view.webViewClient = object:WebViewClient() {
-//            override fun onPageFinished(view: WebView?, url: String?) {
-//
-//                if(x == 0) {
-//                    fillField("q","Kotlin")
-//                    click("Tg7LZd")
-//                }
-//                x=1
-//            }
-//        }
-//        openUrl("https://www.google.com/")
-
-
-//        Toast.makeText(this, "openUrl".substring(3), Toast.LENGTH_LONG).show()
-
 
     }
 
@@ -81,6 +80,7 @@ class CreateScriptActivity : AppCompatActivity() {
         web_view.loadUrl("javascript: (function () {\n" +
                 " document.getElementsByClassName(\"$id\")[0].click();\n" +
                 "}) ()")
+        web_view.reload()
     }
 
     private fun test() {
