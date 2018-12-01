@@ -6,4 +6,59 @@
     android:layout_height="match_parent"
     tools:context=".ShowScript">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/publisher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Publisher Name"
+            android:textColor="@color/publisherName"
+            android:textSize="12dp"/>
+
+        <TextView
+            android:id="@+id/problemTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textColor="@color/body"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginTop="14dp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/problemBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/example"
+                android:textColor="@color/body"
+                android:textStyle="italic"
+                android:textSize="16dp"
+                android:layout_marginTop="14dp"/>
+        </ScrollView>
+
+    </LinearLayout>
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/runButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:background="@color/colorTextHint"
+            android:text="@string/run_script"/>
+
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

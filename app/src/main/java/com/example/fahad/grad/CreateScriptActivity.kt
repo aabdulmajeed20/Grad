@@ -38,20 +38,20 @@ class CreateScriptActivity : AppCompatActivity() {
                         when (s.substring(0, 4)) {
                             "fill" -> {
                                 if(clicked){
-                                    Handler().postDelayed({                                fillField(s.substring(11, s.indexOf(',') - 1), s.substring(s.indexOf(',') + 2, s.length - 2))
-                                    },8000)
+                                    Handler().postDelayed({fillField(s.substring(11, s.indexOf(',') - 1), s.substring(s.indexOf(',') + 2, s.length - 2))
+                                    },4000)
                                 } else
                                     fillField(s.substring(11, s.indexOf(',') - 1), s.substring(s.indexOf(',') + 2, s.length - 2))
-                                Toast.makeText(context, "In FILL, the url: ${web_view.url}", Toast.LENGTH_LONG).show()
+//                                Toast.makeText(context, "In FILL, the url: ${web_view.url}", Toast.LENGTH_LONG).show()
                             }
                             "clic" -> {
                                 if(clicked) {
-                                    Handler().postDelayed({click(s.substring(7, s.length - 2))}, 4000)
+                                    Handler().postDelayed({click(s.substring(7, s.length - 2))}, 2000)
                                 }else
                                     click(s.substring(7, s.length - 2))
                                 clicked = true
                             }
-                            else -> Toast.makeText(context, "Hello Abdullah", Toast.LENGTH_LONG).show()
+                            else -> print("")
                         }
                     }
                 }
