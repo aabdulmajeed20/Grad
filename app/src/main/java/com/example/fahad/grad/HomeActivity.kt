@@ -42,7 +42,7 @@ class HomeActivity : AppCompatActivity() {
         initObjects()
 
         specialistButton.setOnClickListener {
-            val toLogin = Intent(this, ShowScript::class.java)
+            val toLogin = Intent(this, ProfileActivity::class.java)
             startActivity(toLogin)
         }
 
