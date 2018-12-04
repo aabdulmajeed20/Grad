@@ -24,7 +24,7 @@ class CreateScriptActivity : AppCompatActivity() {
         setContentView(R.layout.activity_create_script)
 
         web_view.settings.javaScriptEnabled = true
-        val f1 = File(0, "File 1", "Here is the file 1", "openUrl(\"https://www.google.com/\")\nfillField(\"q\",\"facebook\")\nclick(\"Tg7LZd\")\nclick(\"C8nzq BmP5tf\")\nfillField(\"email\",\"Abdullah\")\nfillField(\"pass\",\"12345\")", 0, mutableListOf("Camera"), Date(), 2, 4.3)
+        val f1 = File(0, "File 1", "Here is the file 1", "openUrl(\"https://www.google.com/\")\nfillField(\"q\",\"facebook\")\nclick(\"Tg7LZd\")", 0, mutableListOf("Camera"), Date(), 2, 4.3)
         val script = f1.getScript(f1.Script) //[openUrl("google.com"), fillField("dsaf",""), click("ghj")]
         var x = 0
         val context = this
@@ -37,21 +37,22 @@ class CreateScriptActivity : AppCompatActivity() {
                     for (s in script) {
                         when (s.substring(0, 4)) {
                             "fill" -> {
-                                if(clicked){
-                                    Handler().postDelayed({fillField(s.substring(11, s.indexOf(',') - 1), s.substring(s.indexOf(',') + 2, s.length - 2))
-                                    },4000)
-                                } else
+//                                if(clicked){
+//                                    Handler().postDelayed({fillField(s.substring(11, s.indexOf(',') - 1), s.substring(s.indexOf(',') + 2, s.length - 2))
+//                                    },4000)
+//                                } else
                                     fillField(s.substring(11, s.indexOf(',') - 1), s.substring(s.indexOf(',') + 2, s.length - 2))
-//                                Toast.makeText(context, "In FILL, the url: ${web_view.url}", Toast.LENGTH_LONG).show()
+                                Toast.makeText(context, "In FILL, the url: ${web_view.url}", Toast.LENGTH_LONG).show()
                             }
                             "clic" -> {
-                                if(clicked) {
-                                    Handler().postDelayed({click(s.substring(7, s.length - 2))}, 2000)
-                                }else
-                                    click(s.substring(7, s.length - 2))
+//                                if(clicked) {
+                                    Handler().postDelayed({click(s.substring(7, s.length - 2))}, 4000)
+//                                }else
+//                                    click(s.substring(7, s.length - 2))
+                                Toast.makeText(context, "In CLICK, the url: ${web_view.url}", Toast.LENGTH_LONG).show()
                                 clicked = true
                             }
-                            else -> print("")
+                            else -> Toast.makeText(context, "Hello Abdullah", Toast.LENGTH_LONG).show()
                         }
                     }
                 }
@@ -76,7 +77,6 @@ class CreateScriptActivity : AppCompatActivity() {
         web_view.loadUrl("javascript: (function () {\n" +
                 " document.getElementsByClassName(\"$id\")[0].click();\n" +
                 "}) ()")
-        web_view.reload()
     }
 
     private fun test() {
