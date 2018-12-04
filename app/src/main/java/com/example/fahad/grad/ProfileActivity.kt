@@ -1,11 +1,16 @@
 package com.example.fahad.grad
 
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkInfo
+import android.net.wifi.WifiManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
+import android.widget.Toast
 import java.util.ArrayList
 
 class ProfileActivity : AppCompatActivity() {
@@ -16,30 +21,17 @@ class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
-        initViews()
-        initObjects()
+        checkNetwork()
+
 
     }
 
-    //Initialize views here
-    private fun initViews() {
-        recyclerViewFiles = findViewById<View>(R.id.recyclerViewFiles) as RecyclerView
-    }
-
-    private fun initObjects() {
-        listFiles = ArrayList()
-        filesRecyclerAdapter = FilesRecyclerAdapter(listFiles)
-
-        val mLayoutManager = LinearLayoutManager(applicationContext)
-        recyclerViewFiles.layoutManager = mLayoutManager
-        recyclerViewFiles.itemAnimator = DefaultItemAnimator()
-        recyclerViewFiles.setHasFixedSize(true)
-        recyclerViewFiles.adapter = filesRecyclerAdapter
-//        val f1 = File(0, "File 1", "Here is the file 1", "Some Scripts", 0)
-//        val f2 = File(1, "File 2", "Here is the file 2", "Some Scripts", 0)
-//        listFiles.add(f1)
-//        listFiles.add(f2)
-
-
+    private fun checkNetwork(): Boolean {
+        val m = getSystemService(Context.CONNECTIVITY_SERVICE)
+        return if(m is ConnectivityManager) {
+            val networkInfo:NetworkInfo? = m.activeNetworkInfo
+            Toast.makeText(applicationContext,"Message: ${networkInfo?.detailedState}", Toast.LENGTH_LONG).show()
+            networkInfo?.isConnected ?: false
+        } else false
     }
 }
