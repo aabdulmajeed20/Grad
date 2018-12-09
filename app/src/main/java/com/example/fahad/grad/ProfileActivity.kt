@@ -22,16 +22,17 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
         checkNetwork()
-
-
+        
     }
 
-    private fun checkNetwork(): Boolean {
-        val m = getSystemService(Context.CONNECTIVITY_SERVICE)
-        return if(m is ConnectivityManager) {
-            val networkInfo:NetworkInfo? = m.activeNetworkInfo
-            Toast.makeText(applicationContext,"Message: ${networkInfo?.detailedState}", Toast.LENGTH_LONG).show()
+    private fun checkNetwork() {
+        val m = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val networkInfo:NetworkInfo? = m.activeNetworkInfo
+        val wm = getApplicationContext().getSystemService(Context.WIFI_SERVICE) as WifiManager
+            Toast.makeText(applicationContext,"Message: ${wm?.connectionInfo}", Toast.LENGTH_LONG).show()
+        println("-----------------------------------------")
+        println(wm?.connectionInfo.ipAddress)
+        println("-----------------------------------------")
             networkInfo?.isConnected ?: false
-        } else false
     }
 }

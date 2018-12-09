@@ -53,13 +53,13 @@
         android:layout_height="0dip"
         android:layout_weight="1"/>
 
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/specialistButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:background="@color/colorTextHint"
-            android:text="@string/is_specialist"/>
+        <!--<android.support.v7.widget.AppCompatButton-->
+            <!--android:id="@+id/specialistButton"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="0"-->
+            <!--android:background="@color/colorTextHint"-->
+            <!--android:text="@string/is_specialist"/>-->
 
     </LinearLayout>
 

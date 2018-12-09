@@ -42,14 +42,15 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/file_description"
+                android:maxLines="1"
                 android:textColor="@android:color/darker_gray" />
 
             <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/userId"
+                android:id="@+id/publisher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:text="UserId"
+                android:text="@string/publisher"
                 android:textColor="@android:color/darker_gray" />
         </LinearLayout>
 

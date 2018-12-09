@@ -41,10 +41,10 @@ class HomeActivity : AppCompatActivity() {
         initViews()
         initObjects()
 
-        specialistButton.setOnClickListener {
-            val toLogin = Intent(this, ProfileActivity::class.java)
-            startActivity(toLogin)
-        }
+//        specialistButton.setOnClickListener {
+//            val toLogin = Intent(this, CreateScriptActivity::class.java)
+//            startActivity(toLogin)
+//        }
 
         
     }
@@ -63,12 +63,16 @@ class HomeActivity : AppCompatActivity() {
         recyclerViewFiles.itemAnimator = DefaultItemAnimator()
         recyclerViewFiles.setHasFixedSize(true)
         recyclerViewFiles.adapter = filesRecyclerAdapter
-        val f1 = File(0, "File 1", "Here is the file 1", "openUrl()\nfillField()\nClick()", 0, mutableListOf("Camera"), Date(), 2, 4.3)
-        val f2 = File(1, "File 2", "Here is the file 2", "Some Scripts", 0, mutableListOf("Router"), Date(), 2, 4.3)
-        val f3 = File(2, "File 3", "Here is the file 3", "Some Scripts", 1, mutableListOf("Air Conditioner"), Date(), 2, 4.3)
+        val f1 = File(0, "Change Credentials", "This will change the credentials to be more secure", "openUrl()\nfillField()\nClick()", "Abdullah", mutableListOf("Router"),"HUAWEI", Date(), 1, 4.9)
+        val f2 = File(1, "Camera worked locally", "The script will make the camera run locally", "openUrl()\nfillField()\nClick()", "Meshaal", mutableListOf("Camera"), "HUAWEI", Date(), 3, 2.6)
+        val f3 = File(2, "Name disappearance", "Now you can disappear your network from others, run the code now", "Some Scripts", "Abdullah", mutableListOf("Router"), "HUAWEI", Date(), 2, 4.4)
+        val f4 = File(3, "Turn off the device", "This will turn off the device directly", "Some Scripts", "Abdulmajeed", mutableListOf("Camera"), "HUAWEI", Date(), 2, 3.5)
+        val f5 = File(3, "Check if credentials strong", "Here is some common credentials that used, the script will test with it and notify if it's secure or not", "Some Scripts", "Bin Madhi", mutableListOf("Camera"), "HUAWEI", Date(), 1, 4.8)
         listFiles.add(f1)
         listFiles.add(f2)
         listFiles.add(f3)
+        listFiles.add(f4)
+        listFiles.add(f5)
         f1.DeviceType.add("Other Device")
         f2.DeviceType.add("in f2 another device")
         listFiles.add(f1)

@@ -7,8 +7,9 @@ data class File(
         val Name: String,
         val Description: String,
         val Script: String,
-        val PublisherId: Int,
+        val PublisherName: String,
         val DeviceType: MutableList<String>,
+        val brand: String,
         val Date: Date,
         val RateOfDanger: Int,
         val RAteOFProblem: Double

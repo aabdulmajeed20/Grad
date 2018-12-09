@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Grad</string>
+    <string name="search">بحث</string>
+    <string name="hint_name">الاسم</string>
+    <string name="hint_email">البريد الالكتروني</string>
+    <string name="hint_password">الكلمة السرية</string>
+    <string name="hint_confirm_password">تأكيد الكلمة السرية</string>
+    <string name="action_settings">الإعدادات</string>
+    <string name="text_hello">مرحبًا</string>
+    <string name="text_welcome">مرحبًا</string>
+    <string name="file_description">الوصف</string>
+    <string name="devices">الأجهزة</string>
+    <string name="run_script">تشغيل الحل</string>
+    <string name="Choose_Device">اختر جهازًا</string>
+    <string name="Choose_brand">اختر علامة تجارية</string>
+    <string name="Choose_name">اختر اسم الجهاز</string>
+    <string name="submit">تأكيد</string>
+    <string name="title">العنوان</string>
+    <string name="publisher">الناشر</string>
+</resources>

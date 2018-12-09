@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Grad</string>
+    <string name="app_name" translatable="false">Grad</string>
     <string name="search">Search</string>
     <string name="hint_name">Name</string>
     <string name="hint_email">Email</string>
@@ -25,5 +25,11 @@
     <string name="create_script">Create a Script</string>
     <string name="devices">Devices</string>
     <string name="run_script">RUN SCRIPT</string>
-    <string name="example">So perhaps, youve generated some fancy text, and youre content that you can now copy and paste your fancy text in the comments section of funny cat videos, but perhaps youre wondering how its even possible to change the font of your text? Is it some sort of hack? Are you copying and pasting an actual font?So perhaps, youve generated some fancy text, and youre content that you can now copy and paste your fancy text in the comments section of funny cat videos, but perhaps youre wondering how its even possible to change the font of your text? Is it some sort of hack? Are you copying and pasting an actual font?So perhaps, youve generated some fancy text, and youre content that you can now copy and paste your fancy text in the comments section of funny cat videos, but perhaps youre wondering how its even possible to change the font of your text? Is it some sort of hack? Are you copying and pasting an actual font?So perhaps, youve generated some fancy text, and youre content that you can now copy and paste your fancy text in the comments section of funny cat videos, but perhaps youre wondering how its even possible to change the font of your text? Is it some sort of hack? Are you copying and pasting an actual font?</string>
+    <string name="Choose_Device">Choose Device:</string>
+    <string name="Choose_brand">Choose Brand</string>
+    <string name="Choose_name">Choose Device name</string>
+    <string name="submit">Submit</string>
+    <string name="title">Title</string>
+    <string name="publisher">Publisher</string>
+    <string name="example" translatable="false">So perhaps, youve generated some fancy text, and youre content that you can now copy and paste your fancy text in the comments section of funny cat videos, but perhaps youre wondering how its even possible to change the font of your text? Is it some sort of hack? Are you copying and pasting an actual font?So perhaps, youve generated some fancy text, and youre content that you can now copy and paste your fancy text in the comments section of funny cat videos, but perhaps youre wondering how its even possible to change the font of your text? Is it some sort of hack? Are you copying and pasting an actual font?So perhaps, youve generated some fancy text, and youre content that you can now copy and paste your fancy text in the comments section of funny cat videos, but perhaps youre wondering how its even possible to change the font of your text? Is it some sort of hack? Are you copying and pasting an actual font?So perhaps, youve generated some fancy text, and youre content that you can now copy and paste your fancy text in the comments section of funny cat videos, but perhaps youre wondering how its even possible to change the font of your text? Is it some sort of hack? Are you copying and pasting an actual font?</string>
 </resources>
