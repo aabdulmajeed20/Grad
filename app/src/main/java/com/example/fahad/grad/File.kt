@@ -1,5 +1,6 @@
 package com.example.fahad.grad
 
+import java.io.Serializable
 import java.util.*
 
 data class File(
@@ -13,7 +14,7 @@ data class File(
         val Date: Date,
         val RateOfDanger: Int,
         val RAteOFProblem: Double
-) {
+) : Serializable {
     fun getDevices(): String {
         var result = ""
         for(d in DeviceType) {
@@ -23,10 +24,6 @@ data class File(
     }
 
     fun getScript( s:String): List<String> {
-        val result = s.split("\n")
-
-
-
-        return result
+        return s.split("\n")
     }
 }

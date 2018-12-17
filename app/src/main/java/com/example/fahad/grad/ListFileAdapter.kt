@@ -23,11 +23,14 @@ class FilesRecyclerAdapter(private val listFile: List<File>) : RecyclerView.Adap
         holder.fileDescription.text = listFile[position].Description
         holder.devices.text = listFile[position].getDevices()
         holder.publisher.text = listFile[position].PublisherName
+
     }
 
     override fun getItemCount(): Int {
         return listFile.size
     }
+
+
 
 
     /**

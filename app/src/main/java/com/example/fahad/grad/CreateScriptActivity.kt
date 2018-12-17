@@ -1,6 +1,7 @@
 package com.example.fahad.grad
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Build
 import android.support.v7.app.AppCompatActivity
@@ -26,12 +27,16 @@ class CreateScriptActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_script)
 
+        val file = intent.extras.getSerializable("file") as File
+
         web_view.settings.javaScriptEnabled = true
-        val f1 = File(0, "File 1", "Here is the file 1", "openUrl(\"https://www.google.com/\")\nfillField(\"q\",\"facebook\")\nclick(\"Tg7LZd\")\nclick(\"C8nzq BmP5tf\")\nfillField(\"email\",\"Abdullah\")\nfillField(\"pass\",\"12345\")", "Abdullah", mutableListOf("Camera"), "HUAWEI", Date(), 2, 4.3)
-        val script = f1.getScript(f1.Script)
+//        val f1 = File(0, "File 1", "Here is the file 1", "openUrl(\"https://www.google.com/\")\nfillField(\"q\",\"facebook\")\nclick(\"Tg7LZd\")\nclick(\"C8nzq BmP5tf\")\nfillField(\"email\",\"Abdullah\")\nfillField(\"pass\",\"12345\")", "Abdullah", mutableListOf("Camera"), "HUAWEI", Date(), 2, 4.3)
+
+        val script = file.getScript(file.Script)
         var x = 0
         context = this
         count = 2
+        try {
         openUrl(script[0].substring(9, script[0].length - 2))
         web_view.webViewClient = object : WebViewClient() {
             override fun onPageFinished(view: WebView?, url: String?) {
@@ -61,6 +66,10 @@ class CreateScriptActivity : AppCompatActivity() {
                 x = 1
             }
 
+        }
+        } catch (e: Exception){
+            Toast.makeText(this, "There is something wrong!", Toast.LENGTH_SHORT).show()
+            onBackPressed()
         }
 
     }

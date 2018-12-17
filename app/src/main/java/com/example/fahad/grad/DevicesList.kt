@@ -11,11 +11,16 @@ import kotlinx.android.synthetic.main.activity_devices_list.*
 
 class DevicesList : AppCompatActivity() {
 
-    val brands = listOf<String>("Choose Brand", "LG", "HUAWEI", "DELL", "APPLE", "LG", "HUAWEI", "DELL", "APPLE", "LG", "HUAWEI", "DELL", "APPLE", "LG", "HUAWEI", "DELL", "APPLE")
-    val devicesName = listOf<String>("Choose Device Name", "Majeed", "Abdullah", "Meshaal", "blbalbalbalbalba")
+
+    val brands = listOf<String>( "LG", "HUAWEI", "DELL", "APPLE", "LG", "HUAWEI", "DELL", "APPLE", "LG", "HUAWEI", "DELL", "APPLE", "LG", "HUAWEI", "DELL", "APPLE")
+    val devicesName = listOf<String>( "Majeed", "Abdullah", "Meshaal", "blbalbalbalbalba")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_devices_list)
+
+        print("-----------------------------------------------")
+//        print("$cb\n$cd")
+        print("-----------------------------------------------")
 
         val brandsAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, brands)
         brandsAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
